@@ -12,6 +12,8 @@ from torch.utils.cpp_extension import CUDAExtension
 
 requirements = ["torch", "torchvision"]
 
+if not os.path.exists("knn_pytorch"):
+    os.mkdir("knn_pytorch")
 
 def get_extensions():
     this_dir = os.path.dirname(os.path.abspath(__file__))

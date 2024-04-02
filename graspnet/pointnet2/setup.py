@@ -9,6 +9,9 @@ import glob
 import os
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
+if not os.path.exists("pointnet2"):
+    os.mkdir("pointnet2")
+
 _ext_src_root = "_ext_src"
 _ext_sources = glob.glob("{}/src/*.cpp".format(_ext_src_root)) + glob.glob(
     "{}/src/*.cu".format(_ext_src_root)
@@ -30,5 +33,4 @@ setup(
     cmdclass={
         'build_ext': BuildExtension
     }
-    
 )
